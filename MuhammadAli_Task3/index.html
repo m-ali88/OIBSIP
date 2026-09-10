@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive vanilla JavaScript to-do app with pending and completed task lists.">
+  <title>TaskFlow — To-Do Web App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">OIBSIP · TASK 3</p>
+        <h1>TaskFlow</h1>
+        <p class="subtitle">Plan it. Finish it. Keep moving.</p>
+      </div>
+      <div class="total-badge" aria-label="Total tasks">
+        <span id="total-count">0</span>
+        <small>total</small>
+      </div>
+    </header>
 
+    <section class="add-panel" aria-label="Add a new task">
+      <form id="task-form">
+        <label class="sr-only" for="task-input">Task description</label>
+        <input
+          id="task-input"
+          type="text"
+          maxlength="120"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="add-button">Add Task</button>
+      </form>
+    </section>
+
+    <div class="lists">
+      <section class="task-section pending-section" aria-labelledby="pending-heading">
+        <div class="section-title">
+          <div>
+            <p class="section-kicker">UP NEXT</p>
+            <h2 id="pending-heading">Pending Tasks</h2>
+          </div>
+          <span id="pending-count" class="count">0 pending</span>
+        </div>
+        <ul id="pending-list" class="task-list"></ul>
+        <p id="pending-empty" class="empty-state">
+          🎯 You're all caught up! Add a task to get started.
+        </p>
+      </section>
+
+      <section class="task-section completed-section" aria-labelledby="completed-heading">
+        <div class="section-title">
+          <div>
+            <p class="section-kicker">DONE</p>
+            <h2 id="completed-heading">Completed Tasks</h2>
+          </div>
+          <span id="completed-count" class="count">0 completed</span>
+        </div>
+        <ul id="completed-list" class="task-list"></ul>
+        <p id="completed-empty" class="empty-state">
+          ✨ Completed tasks will appear here.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <template id="task-template">
+    <li class="task-item">
+      <div class="task-content">
+        <button type="button" class="toggle-button" aria-label="Mark task complete"></button>
+        <div class="task-details">
+          <span class="task-text"></span>
+          <span class="task-time"></span>
+        </div>
+      </div>
+      <div class="task-actions">
+        <button type="button" class="edit-button">Edit</button>
+        <button type="button" class="delete-button">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
