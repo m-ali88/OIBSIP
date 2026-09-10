@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register a user for the SecureGate authentication demo.">
+  <title>SecureGate — Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="brand-panel">
+      <p class="eyebrow">OIBSIP · TASK 4</p>
+      <h1>SecureGate</h1>
+      <p class="brand-copy">Create a demo account with basic password-strength validation and hashed password storage.</p>
+    </section>
+
+    <section class="auth-card" aria-labelledby="register-heading">
+      <div class="card-heading">
+        <p class="eyebrow">GET STARTED</p>
+        <h2 id="register-heading">Create account</h2>
+        <p>Choose a username, email, and secure password.</p>
+      </div>
+
+      <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label for="register-username">Username</label>
+          <input id="register-username" name="username" type="text" minlength="3" maxlength="30" autocomplete="username" required>
+          <small class="hint">3–30 characters. Letters, numbers, dots, underscores, and hyphens.</small>
+          <small class="field-error" data-error-for="register-username"></small>
+        </div>
+
+        <div class="field">
+          <label for="register-email">Email</label>
+          <input id="register-email" name="email" type="email" maxlength="120" autocomplete="email" required>
+          <small class="field-error" data-error-for="register-email"></small>
+        </div>
+
+        <div class="field">
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" minlength="8" autocomplete="new-password" required>
+          <small class="hint">Minimum 8 characters and at least 1 number.</small>
+          <small class="field-error" data-error-for="register-password"></small>
+        </div>
+
+        <div class="password-meter" aria-hidden="true">
+          <span id="meter-bar"></span>
+        </div>
+
+        <button class="primary-button" type="submit">Register</button>
+      </form>
+
+      <p class="switch-text">Already have an account? <a href="index.html">Log in</a></p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

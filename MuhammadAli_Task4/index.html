@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Client-side login authentication demo using localStorage and SHA-256 hashing.">
+  <title>SecureGate — Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="brand-panel">
+      <p class="eyebrow">OIBSIP · TASK 4</p>
+      <h1>SecureGate</h1>
+      <p class="brand-copy">A clean client-side authentication demo with registration, validation, protected access, and logout.</p>
+    </section>
 
+    <section class="auth-card" aria-labelledby="login-heading">
+      <div class="card-heading">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h2 id="login-heading">Log in</h2>
+        <p>Enter your username or email and password.</p>
+      </div>
+
+      <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-identifier">Username or email</label>
+          <input id="login-identifier" name="identifier" type="text" autocomplete="username" required>
+          <small class="field-error" data-error-for="login-identifier"></small>
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <small class="field-error" data-error-for="login-password"></small>
+        </div>
+
+        <button class="primary-button" type="submit">Login</button>
+      </form>
+
+      <p class="switch-text">Don't have an account? <a href="register.html">Create one</a></p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

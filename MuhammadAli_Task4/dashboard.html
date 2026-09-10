@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protected SecureGate dashboard.">
+  <title>SecureGate — Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="dashboard-shell">
+    <header class="dashboard-header">
+      <div>
+        <p class="eyebrow">PROTECTED AREA</p>
+        <h1>Dashboard</h1>
+      </div>
+      <button id="logout-button" class="logout-button" type="button">Logout</button>
+    </header>
+
+    <section class="dashboard-card">
+      <div class="avatar" id="avatar" aria-hidden="true">U</div>
+      <div>
+        <p class="eyebrow">AUTHENTICATED SESSION</p>
+        <h2>Welcome, <span id="username"></span>!</h2>
+        <p class="dashboard-copy">
+          You successfully logged in. This page checks for an active client-side session
+          before displaying protected content.
+        </p>
+      </div>
+    </section>
+
+    <section class="security-note">
+      <h2>Demo security model</h2>
+      <p>
+        Passwords are never saved as plain text in this demo. A SHA-256 digest is stored
+        instead, and the current login session is stored separately.
+      </p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
